@@ -1,0 +1,65 @@
+<div class="container">
+
+  <div ng-include="'views/common/alerts/notification.html'"></div>
+  <div ng-include="'views/common/alerts/error.html'"></div>
+
+  <h1>My Bag</h1>
+
+  <br>
+
+  <div class="bag__product__listItems">
+    <table>
+      <tr ng-repeat="product in bagProducts">
+        <td>
+          <img class="product__image__listItems" ng-src="{{product.image}}" alt="Product" itemprop="image"/>
+        </td>
+        <td class="product__info__listItems">
+          <h1 class="product__title" itemprop="brand">{{product.title}}</h1>
+          <p class="product__subtitle" itemprop="description">{{product.subtitle}}</p>
+        </td>
+        <td class="product__info__listItems">
+          <div class="product__price" itemscope itemtype="http://schema.org/Offer">
+            <span class="product__price">£{{product.price}}</span>
+          </div>
+          <p>
+            <a href="" ng-click="global.removeFromBag(product)"> Remove Product</a>
+          </p>
+          <p>
+            <a href="" ng-click="global.moveToWishlist(product)"> Move to Wishlist </a>
+          </p>
+        </td>
+      </tr>
+    </table>
+  </div>
+
+  <div class="bag__summary" ng-if="bagProducts.length > 0">
+    <table>
+      <tr>
+        <td colspan="2"><h1>SUMMARY</h1></td>
+      </tr>
+      <tr><td colspan="2"><hr></td></tr>
+      <tr>
+        <td>
+          <div class="product__price" itemscope itemtype="http://schema.org/Offer">
+            Total
+          </div>
+        </td>
+        <td class="td-right">
+          <div class="product__price" itemscope itemtype="http://schema.org/Offer">
+            <span id="spn_total_price" class="product__price">£{{global.sumBag()}}</span>
+          </div>
+        </td>
+      </tr>
+      <tr>
+        <td colspan="2" class="td-buy">
+          <button
+            id="btn_checkout"
+            class="product__add-to-cart button button--primary"
+            ng-click="global.checkout()">
+            Buy
+          </button>
+        </td>
+      </tr>
+    </table>
+  </div>
+</div>

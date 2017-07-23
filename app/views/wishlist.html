@@ -1,0 +1,40 @@
+<div class="container">
+
+  <div ng-include="'views/common/alerts/notification.html'"></div>
+  <div ng-include="'views/common/alerts/error.html'"></div>
+
+  <h1>My Wishlist</h1>
+
+  <br>
+
+  <div class="bag__product__listItems">
+    <table>
+      <tr ng-repeat="product in wishlistProducts">
+        <td>
+          <img class="product__image__listItems" ng-src="{{product.image}}" alt="Product" itemprop="image"/>
+        </td>
+        <td class="product__info__listItems">
+          <h1 class="product__title" itemprop="brand">{{product.title}}</h1>
+          <p class="product__subtitle" itemprop="description">{{product.subtitle}}</p>
+        </td>
+        <td class="product__info__listItems">
+          <div class="product__price" itemscope itemtype="http://schema.org/Offer">
+            <span class="product__price">£{{product.price}}</span>
+          </div>
+          <p>
+            <a
+              id="a_remove_wishlist_{{product.id}}"
+              href=""
+              ng-click="global.removeFromWishlist(product)"> Remove From Wishlist</a>
+          </p>
+          <p>
+            <a
+              id="a_move_bag_{{product.id}}"
+              href=""
+              ng-click="global.moveToBag(product)"> Move to Bag </a>
+          </p>
+        </td>
+      </tr>
+    </table>
+  </div>
+</div>

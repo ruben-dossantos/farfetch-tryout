@@ -1,0 +1,83 @@
+<!doctype html>
+<html lang="">
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="x-ua-compatible" content="ie=edge">
+  <title>Shopping Cart Challenge</title>
+  <meta name="description" content="Shopping Cart Javascript Developer Challenge">
+
+  <!-- Schema.org for Google -->
+  <meta itemprop="name" content="Shopping Cart Challenge">
+  <meta itemprop="description" content="Shopping Cart Javascript Developer Challenge">
+
+  <!-- Open Graph general (Facebook, Pinterest & Google+) -->
+  <meta name="og:title" content="Shopping Cart Challenge">
+  <meta name="og:description" content="Shopping Cart Javascript Developer Challenge">
+  <meta name="og:site_name" content="Shopping Cart Challenge">
+  <meta name="og:locale" content="en_Us">
+  <meta name="og:type" content="website">
+
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <!-- Place favicon.ico and apple-touch-icon.png in the root directory -->
+  <!-- build:css(app) styles/vendor.css -->
+  <!-- bower:css -->
+  <!-- endbower -->
+  <!-- endbuild -->
+  <!-- build:css({.tmp,app}) styles/main.css -->
+  <link rel="stylesheet" href="styles/main.css">
+  <!-- endbuild -->
+</head>
+<body ng-app="farfetchApp">
+<!--[if lte IE 8]>
+<p class="browsehappy">You are using an <strong>outdated</strong> browser. Please <a href="http://browsehappy.com/">upgrade your browser</a> to improve your experience.</p>
+<![endif]-->
+
+<!--&lt;!&ndash; Add your site or application content here &ndash;&gt;-->
+<div ng-include="'views/common/navbar.html'"></div>
+<main class="product-page" ng-view="">
+
+</main>
+
+<div ng-include="'views/common/footer.html'"></div>
+
+
+<!-- Google Analytics: change UA-XXXXX-X to be your site's ID -->
+<script>
+  !function(A,n,g,u,l,a,r){A.GoogleAnalyticsObject=l,A[l]=A[l]||function(){
+      (A[l].q=A[l].q||[]).push(arguments)},A[l].l=+new Date,a=n.createElement(g),
+    r=n.getElementsByTagName(g)[0],a.src=u,r.parentNode.insertBefore(a,r)
+  }(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
+
+  ga('create', 'UA-XXXXX-X');
+  ga('send', 'pageview');
+</script>
+
+<!-- build:js(app) scripts/vendor.js -->
+<!-- bower:js -->
+<script src="bower_components/angular/angular.js"></script>
+<script src="bower_components/angular-cookies/angular-cookies.js"></script>
+<script src="bower_components/angular-resource/angular-resource.js"></script>
+<script src="bower_components/angular-route/angular-route.js"></script>
+<script src="bower_components/angular-mocks/angular-mocks.js"></script>
+<script src="bower_components/angular-local-storage/dist/angular-local-storage.js"></script>
+<!-- endbower -->
+<!-- endbuild -->
+
+<!-- build:js({.tmp,app}) scripts/scripts.js -->
+<script src="scripts/app.js"></script>
+<script src="scripts/controllers/main.js"></script>
+<script src="scripts/services/product.js"></script>
+<script src="scripts/controllers/bag.js"></script>
+<script src="scripts/controllers/wishlist.js"></script>
+<script src="scripts/controllers/common/functions.js"></script>
+<script src="scripts/services/bag.js"></script>
+<script src="scripts/controllers/common/navbar.js"></script>
+<script src="scripts/services/wishlist.js"></script>
+<script src="scripts/controllers/common/models.js"></script>
+<script src="scripts/services/times.js"></script>
+<!-- endbuild -->
+
+<script src="scripts/templates.js"></script>
+
+</body>
+</html>

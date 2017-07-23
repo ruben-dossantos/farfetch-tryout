@@ -1,0 +1,17 @@
+{
+  "name": "farfetch",
+  "version": "0.0.1",
+  "dependencies": {
+    "angular": "latest",
+    "angular-cookies": "latest",
+    "angular-resource": "latest",
+    "angular-route": "latest",
+    "angular-mocks": "latest",
+    "angular-local-storage": "0.5.2"
+  },
+  "devDependencies": {
+    "angular-mocks": "^1.4.0"
+  },
+  "appPath": "app",
+  "moduleName": "farfetchApp"
+}
